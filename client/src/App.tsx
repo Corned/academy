@@ -1,26 +1,67 @@
-import { BinaryIcon, DiffIcon, GitBranchIcon, GithubIcon, GitlabIcon, MenuSquareIcon } from "lucide-react"
+import { BarChartIcon, BinaryIcon, DiffIcon, GitBranchIcon, GithubIcon, GitlabIcon, GraduationCapIcon, HomeIcon, LogOutIcon, MenuSquareIcon, SchoolIcon, SettingsIcon } from "lucide-react"
+
+
+import logo from "./assets/digitalents-logo.jpg"
+
+const Collapsable = () => {
+  return (
+    <div>
+
+    </div>
+  )
+}
+
+const NavItem = ({ icon, label }) => {
+  return (
+    <div className="nav__item">
+      { icon }
+      { label }
+    </div>
+  )
+}
+
+const Nav = () => {
+  return (
+    <div className="nav">
+      <div className="nav__item invert">
+        <GraduationCapIcon />
+      </div>
+
+      <div className="nav__item">
+        <HomeIcon />
+      </div>
+      <div className="nav__item">
+        <SchoolIcon />
+      </div>
+
+      <div className="nav__divider grow" />
+
+      <div className="nav__item">
+        <SettingsIcon />
+      </div>
+
+      <div className="nav__item">
+        <LogOutIcon />
+      </div>
+    </div>
+  )
+}
+
+const Content = () => {
+  return (
+    <div className="content">
+
+    </div>
+  )
+}
 
 const App = () => {
   return (
     <div className="App">
-      <nav>
-        <p className="font-mono">{ ":// Digitalents Academy" }</p>
-      </nav>
-      <div className="content">
-        <h1 className="text-6xl font-semibold">Digiopintoni 🤓</h1>
 
-        <div className="button-group">
-          <button className="selected">
-            <GithubIcon />
-          </button>
-          <button>
-            <GitlabIcon />
-          </button>
-          <button>
-            <BinaryIcon />
-          </button>
-        </div>
-      </div>
+      <Nav />
+      <Content />
+
     </div>
   )
 }
