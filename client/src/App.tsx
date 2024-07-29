@@ -1,4 +1,4 @@
-import { BarChartIcon, BinaryIcon, DiffIcon, GitBranchIcon, GithubIcon, GitlabIcon, GraduationCapIcon, HomeIcon, LogOutIcon, MenuSquareIcon, SchoolIcon, SettingsIcon } from "lucide-react"
+import { BarChartIcon, BinaryIcon, DiffIcon, GitBranchIcon, GithubIcon, GitlabIcon, GraduationCapIcon, HomeIcon, HouseIcon, LogOutIcon, MenuSquareIcon, SchoolIcon, SettingsIcon } from "lucide-react"
 
 
 import logo from "./assets/digitalents-logo.jpg"
@@ -23,26 +23,29 @@ const NavItem = ({ icon, label }) => {
 const Nav = () => {
   return (
     <div className="nav">
-      <div className="nav__item invert">
+
+{/*       <div className="nav__item invert">
         <GraduationCapIcon />
+        <p>Academy</p>
+      </div>   */}    
+      
+      
+      <div className="nav__item">
+        <HouseIcon />
+        <p>Home</p>
+      </div>
+      
+      <div className="nav__item">
+        <HouseIcon />
+        <p>Courses</p>
+      </div>
+      
+      <div className="nav__item">
+        <HouseIcon />
+        <p>My Profile</p>
       </div>
 
-      <div className="nav__item">
-        <HomeIcon />
-      </div>
-      <div className="nav__item">
-        <SchoolIcon />
-      </div>
 
-      <div className="nav__divider grow" />
-
-      <div className="nav__item">
-        <SettingsIcon />
-      </div>
-
-      <div className="nav__item">
-        <LogOutIcon />
-      </div>
     </div>
   )
 }
@@ -60,7 +63,7 @@ const App = () => {
     <div className="App">
 
       <Nav />
-      <Content />
+      {/* <Content /> */}
 
     </div>
   )
