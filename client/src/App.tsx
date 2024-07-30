@@ -1,4 +1,4 @@
-import { BarChartIcon, BinaryIcon, DiffIcon, GitBranchIcon, GithubIcon, GitlabIcon, GraduationCapIcon, HomeIcon, HouseIcon, LogOutIcon, MenuSquareIcon, SchoolIcon, SettingsIcon } from "lucide-react"
+import { BarChartIcon, BinaryIcon, BookAIcon, DiffIcon, GitBranchIcon, GithubIcon, GitlabIcon, GraduationCapIcon, HomeIcon, HouseIcon, LogOutIcon, MenuSquareIcon, SchoolIcon, SettingsIcon } from "lucide-react"
 
 
 import logo from "./assets/digitalents-logo.jpg"
@@ -24,11 +24,15 @@ const Nav = () => {
   return (
     <div className="nav">
 
-{/*       <div className="nav__item invert">
-        <GraduationCapIcon />
-        <p>Academy</p>
-      </div>   */}    
-      
+      <div className="nav__spacer"></div>
+
+      <div className="nav__header">
+        <p>Digitalents Academy</p>
+      </div>   
+    
+      <div className="nav__spacer"></div>
+      {/* <p className="nav__title">Main</p> */}
+
       
       <div className="nav__item">
         <HouseIcon />
@@ -36,15 +40,25 @@ const Nav = () => {
       </div>
       
       <div className="nav__item">
-        <HouseIcon />
+        <GraduationCapIcon />
         <p>Courses</p>
       </div>
       
       <div className="nav__item">
-        <HouseIcon />
-        <p>My Profile</p>
+        <BookAIcon />
+        <p>Resources</p>
       </div>
 
+      
+      <div className="nav__spacer--fill"></div>
+
+
+      <div className="nav__item">
+        <LogOutIcon />
+        <p>Log out</p>
+      </div>
+
+      <div className="nav__spacer"></div>
 
     </div>
   )
