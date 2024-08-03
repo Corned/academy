@@ -1,9 +1,4 @@
 @font-face {
-  font-family: "Roboto Flex";
-  src: url(/src/assets/fonts/RobotoFlex-VariableFont.ttf);
-}
-
-@font-face {
   font-family: "Inter";
   src: url(/src/assets/fonts/Inter.ttf);
 }
@@ -28,7 +23,6 @@ html, body, #root, .App {
 }
 
 .nav {
-  height: 100%;
   width: 200px;
   padding: 10px;
 
@@ -40,7 +34,10 @@ html, body, #root, .App {
   color: #111725;
 
   border-radius: 0 12px 12px 0;
+
+  margin: 10px 0;
 }
+
 .nav__header {
   border-radius: 8px;
   overflow: hidden;
@@ -50,12 +47,14 @@ html, body, #root, .App {
   grid-template-columns: 1fr;
   gap: 10px;
   align-items: center;
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: 900;
+  font-size: 22px;
   padding: 6px 8px;
 
   cursor: pointer;
   text-align: center;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .nav__header:hover {
@@ -67,10 +66,14 @@ html, body, #root, .App {
   font-weight: 600;
   font-size: 12px;
   color: #3a424a;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .nav__spacer {
   height: 34px;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .nav__spacer--fill {
@@ -89,6 +92,8 @@ html, body, #root, .App {
   padding: 6px 8px;
 
   cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .nav__item:hover {
@@ -106,14 +111,26 @@ html, body, #root, .App {
   border-radius: 4px;
 }
 
+.nav__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  background-color: #ece8e6;
+  border-radius: 4px;
+}
 
 
 
+.reverse {
+  direction: rtl;
+}
 
 
 .content {
   background-color: #fbfbfb;
   flex-grow: 1;
-  border-top-left-radius: 24px;
-  margin-top: 72px;
+  border-radius: 12px;
+  margin: 10px;
 }
+

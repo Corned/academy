@@ -52,13 +52,10 @@ const Nav = () => {
       
       <div className="nav__spacer--fill"></div>
 
-
-      <div className="nav__item">
+      <div className="nav__item reverse">
         <LogOutIcon />
         <p>Log out</p>
       </div>
-
-      <div className="nav__spacer"></div>
 
     </div>
   )
@@ -77,7 +74,7 @@ const App = () => {
     <div className="App">
 
       <Nav />
-      {/* <Content /> */}
+      <Content />
 
     </div>
   )
