@@ -9,6 +9,7 @@
   padding: 0;
   line-height: 1.5;
   font-family: "Inter";
+  color: #212529;
 }
 
 html, body, #root, .App {
@@ -30,7 +31,7 @@ html, body, #root, .App {
   flex-direction: column;
   gap: 2px;
 
-  background-color: white;
+  background-color: #fbfbfb;
   color: #111725;
 
   border-radius: 0 12px 12px 0;
@@ -41,7 +42,6 @@ html, body, #root, .App {
 .nav__header {
   border-radius: 8px;
   overflow: hidden;
-  background-color: white;
 
   display: grid;
   grid-template-columns: 1fr;
@@ -96,6 +96,10 @@ html, body, #root, .App {
   user-select: none;
 }
 
+.nav__item--narrow {
+  grid-template-columns: auto;
+}
+
 .nav__item:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
@@ -131,6 +135,7 @@ html, body, #root, .App {
   background-color: #fbfbfb;
   flex-grow: 1;
   border-radius: 12px;
+  padding: 48px 24px 24px 24px;
   margin: 10px;
 }
 

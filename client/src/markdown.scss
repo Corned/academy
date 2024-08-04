@@ -1,0 +1,46 @@
+.markdown {
+
+  h1, h2, h3 {
+    margin-bottom: 0.67em;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+  }
+  
+  h3 {
+    font-size: 1.17em;
+  }
+  
+  p {
+    margin-bottom: 0.67em;
+  }
+  
+  ul { 
+    list-style-type: disc; 
+    list-style-position: inside;
+  }
+  
+  ol { 
+    list-style-type: decimal; 
+    list-style-position: inside; 
+  }
+  
+  ul ul, ol ul { 
+    list-style-type: circle; 
+    list-style-position: inside; 
+    margin-left: 15px; 
+  }
+  
+  ol ol, ul ol { 
+    list-style-type: lower-latin; 
+    list-style-position: inside; 
+    margin-left: 15px; 
+  }
+
+}  
+
