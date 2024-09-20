@@ -1,82 +1,60 @@
-import { BarChartIcon, BinaryIcon, BookAIcon, DiffIcon, GitBranchIcon, GithubIcon, GitlabIcon, GraduationCapIcon, HomeIcon, HouseIcon, LogOutIcon, MenuIcon, MenuSquareIcon, SchoolIcon, SettingsIcon } from "lucide-react"
-import Markdown from "react-markdown"
+import { BinaryIcon, BookTypeIcon, CodeIcon, GithubIcon } from "lucide-react"
+import CourseListItem from "@/components/CourseListItem"
+
+import { ICourse } from "@/interfaces"
 
 
-const Nav = () => {
-  return (
-    <div className="nav">
-
-      <div className="nav__item nav__item--narrow ml-auto">
-        <MenuIcon />
-      </div>
-
-      <div className="nav__header">
-        <p>Digitalents Academy</p>
-      </div>   
-    
-      <div className="nav__spacer"></div>
-      {/* <p className="nav__title">Main</p> */}
-
-      
-      <div className="nav__item">
-        <HouseIcon />
-        <p>Home</p>
-      </div>
-      
-      <div className="nav__item">
-        <GraduationCapIcon />
-        <p>Courses</p>
-      </div>
-      
-      <div className="nav__item">
-        <BookAIcon />
-        <p>Resources</p>
-      </div>
-
-      
-      <div className="nav__spacer--fill"></div>
-
-      <div className="nav__item reverse">
-        <LogOutIcon />
-        <p>Log out</p>
-      </div>
-
-    </div>
-  )
-}
-
-
-
-const Content = () => {
-
-  const md = `
-# Welcome to Digitalents Academy!
-
-Hello! This is the home page of Digitalents Academy, the new learning platform for x, y and z.
-
-This platform allows you to:
-
-* Learn the basics of HTML, CSS and JavaScript
-  * Learn the basics of HTML, CSS and JavaScript
-    * Learn the basics of HTML, CSS and JavaScript
-      * Learn the basics of HTML, CSS and JavaScript
-* Get into developing Single Page Applications with React.js
-`
-
-  return (
-    <div className="content markdown">
-      {/* <p className='text-7xl font-bold'>Hello John!</p> */}
-      <Markdown>{ md }</Markdown>
-    </div>
-  )
-}
+const courseData: ICourse[] = [
+  {
+    id: 2,
+    name: "HTML & CSS",
+    author: "Academy",
+    description: "Learn the basics of HTML and CSS.",
+    icon: <CodeIcon size={32}/>,
+  },
+  {
+    id: 3,
+    name: "JavaScript",
+    author: "Academy",
+    description: "Learn the basics of JavaScript.",
+    icon: <BinaryIcon size={32}/>,
+  },
+  {
+    id: 4,
+    name: "GitHub & Version Control",
+    author: "Academy",
+    description: "Learn how to use GitHub and version control.",
+    icon: <GithubIcon size={32}/>,
+  },
+  {
+    id: 5,
+    name: "React",
+    author: "Academy",
+    description: "Learn how to build single-page applications with React.",
+    icon: <BookTypeIcon size={32}/>,
+  },
+]
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="App flex flex-col gap-4 p-2 max-w-[600px] mx-auto mt-40">
 
-      <Nav />
-      <Content />
+      {/* <Nav />
+      <Content /> */}
+
+      <div className="flex flex-col gap-2 mb-5 px-3">
+        <p className="text-[48px] font-extrabold mb-4">Hey! 👋</p>
+        <p className="text-2xl font-bold">Welcome to Academy!</p>
+        <p className="text-xl">This is the home page of Academy, the new learning platform for web development.</p>
+      </div>
+
+      <p className="text-2xl font-bold mx-3">Courses</p>
+
+      <div className="course-list w-full flex flex-col gap-2 rounded-3xl">
+        {
+          courseData.map((course) => <CourseListItem courseData={course} key={course.id} />)
+        }
+      </div>
 
     </div>
   )

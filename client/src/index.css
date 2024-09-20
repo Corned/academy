@@ -2,7 +2,6 @@
   font-family: "Inter";
   src: url(/src/assets/fonts/Inter.ttf);
 }
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,12 +11,16 @@
   color: #212529;
 }
 
-html, body, #root, .App {
+html, body, #root {
   height: 100%;
 }
 
 .App {
-  background-color: #f1eded;
+}
+
+/*
+
+.App {
 
   display: flex;
   flex-direction: row;
@@ -137,5 +140,4 @@ html, body, #root, .App {
   border-radius: 12px;
   padding: 48px 24px 24px 24px;
   margin: 10px;
-}
-
+} */
