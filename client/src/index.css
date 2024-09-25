@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 @font-face {
   font-family: "Inter";
   src: url(/src/assets/fonts/Inter.ttf);
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,8 +18,10 @@ html, body, #root {
   height: 100%;
 }
 
-.App {
+html, body, #root, .App {
+  background-color: rgb(252, 252, 255);
 }
+
 
 /*
 
