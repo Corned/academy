@@ -20,7 +20,6 @@ jobs:
         with:
           python-version: '3.12.1'
 
-      
       - uses: browser-actions/setup-chrome@v1
         with:
           chrome-version: 120
@@ -41,7 +40,7 @@ jobs:
   
       - name: Run Robot Framework Tests
         run: |
-          cd client/tests
+          cd client/robot
           robot .
     
       - name: Test Report Generation
