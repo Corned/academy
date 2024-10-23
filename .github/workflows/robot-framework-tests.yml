@@ -1,0 +1,52 @@
+name: Robot Framework - Python
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+ 
+permissions:
+  contents: read
+ 
+jobs:
+  Install_Dependencies_and_Run_Robot_Framework_Tests:
+    runs-on: ubuntu-latest
+     
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python 3.12.1
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12.1'
+
+      
+      - uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: 120
+          install-dependencies: true
+   
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install webdriver-manager
+          pip install robotframework
+          pip install robotframework-seleniumlibrary
+          pip install selenium  # Ensure selenium is installed
+
+      - name: Verify Chrome and ChromeDriver Installation
+        run: |
+          google-chrome --version
+          chromedriver --version
+  
+      - name: Run Robot Framework Tests
+        run: |
+          cd client/tests
+          robot .
+    
+      - name: Test Report Generation
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Report                # Name of the artifact
+          path: output                  # Path to Robot Framework output (default is 'output' directory)
