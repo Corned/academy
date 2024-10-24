@@ -1,4 +1,5 @@
-name: Robot Framework - Python
+name: Robot Framework Tests - Python
+
 on:
   push:
     branches: [ "master" ]
