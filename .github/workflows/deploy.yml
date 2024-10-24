@@ -62,5 +62,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'asa-vqrzyfepyyitw'
-          package: ./dist
+          package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
