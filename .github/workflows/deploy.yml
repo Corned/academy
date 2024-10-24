@@ -62,6 +62,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'asa-vqrzyfepyyitw'
-          slot-name: 'development'
           package: ./client/dist
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
