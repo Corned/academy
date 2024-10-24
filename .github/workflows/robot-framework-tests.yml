@@ -4,14 +4,14 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
- 
+
 permissions:
   contents: read
- 
+
 jobs:
   Install_Dependencies_and_Run_Robot_Framework_Tests:
     runs-on: ubuntu-latest
-     
+
     steps:
       - uses: actions/checkout@v3
 
@@ -20,12 +20,19 @@ jobs:
         with:
           python-version: '3.12.1'
 
-      - uses: browser-actions/setup-chrome@v1
-        with:
-          chrome-version: 120
-          install-dependencies: true
-   
-      - name: Install dependencies
+      - name: Install Google Chrome
+        run: |
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt-get update
+          sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
+          rm google-chrome-stable_current_amd64.deb
+
+      - name: Verify Google Chrome Installation
+        run: |
+          google-chrome --version
+          chromedriver --version
+
+      - name: Install Python Dependencies
         run: |
           python -m pip install --upgrade pip
           pip install webdriver-manager
@@ -33,19 +40,50 @@ jobs:
           pip install robotframework-seleniumlibrary
           pip install selenium  # Ensure selenium is installed
 
-      - name: Verify Chrome and ChromeDriver Installation
+      - name: Install Client Dependencies
         run: |
-          google-chrome --version
+          cd client
+          npm install
+
+#      - name: Install Server Dependencies
+#        run: |
+#          cd server
+#          npm install
+
+#      - name: Start Server
+#        run: |
+#          cd server
+#          npm start
+#          echo "Server started"
+
+      - name: Start Client
+        run: |
+          cd client
+          npm start &
+          echo "Client started"
+
+      - name: Install wait-on
+        run: |
+          npm install -g wait-on
+
+      - name: Wait for client to Be Ready
+        run: |
+          echo "Waiting for client to be ready..."
+          sleep
+
+      - name: Verify Chromium Installation
+        run: |
+          chromium-browser --version
           chromedriver --version
-  
+
       - name: Run Robot Framework Tests
         run: |
           cd client/robot
           robot .
-    
+
       - name: Test Report Generation
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: Report                # Name of the artifact
-          path: output                  # Path to Robot Framework output (default is 'output' directory)
+          path: output                 # Path to Robot Framework output (default is 'output' directory)

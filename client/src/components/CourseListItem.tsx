@@ -1,4 +1,3 @@
-import { Card } from "@/components/ui/card"
 import { ICourse } from "@/interfaces"
 
 const CourseListItem = ({ courseData }: { courseData: ICourse }) => {

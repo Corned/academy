@@ -1,5 +1,5 @@
-import { HouseIcon, MenuIcon, GraduationCapIcon, BookAIcon, LogOutIcon, XIcon } from "lucide-react"
-import { useState } from "react"
+import { HouseIcon, GraduationCapIcon, BookAIcon } from "lucide-react"
+//import { useState } from "react"
 
 interface INavigationItem {
   icon?: React.ReactNode
@@ -24,10 +24,10 @@ const NavigationItem = ({ icon, text, alignLeft = false }: INavigationItem) => {
 }
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  // const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="bg-white sticky top-20 flex flex-col gap-1 w-[220px] p-4 m-6 mb-auto rounded-xl border">
+    <div className="bg-white sticky top-10 flex flex-col gap-1 w-[220px] p-4 m-6 mb-auto rounded-xl border">
 
       {/* <NavigationItem icon={isOpen ? <MenuIcon /> : <XIcon />} alignLeft /> */}
 
