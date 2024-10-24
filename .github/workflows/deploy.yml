@@ -1,7 +1,9 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Build and deploy Node.js app to Azure Web App
+
+permissions:
+  id-token: write         # Allows the workflow to generate ID tokens
+  contents: read          # Default permission for reading repository contents
+  actions: read           # Allows the workflow to use actions
 
 on:
   push:
