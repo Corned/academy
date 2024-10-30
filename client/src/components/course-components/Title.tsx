@@ -1,15 +1,19 @@
-import classNames from "classnames"
+const Title = (props: {
+  text: string
+  isEditMode: boolean
+  setValue: (newValue: string) => void
+}) => {
+  if (props.isEditMode) {
+    return (
+      <input
+        className={"rounded border border-black/20 text-2xl font-bold"}
+        value={props.text}
+        onChange={(e) => props.setValue(e.target.value)}
+      />
+    )
+  }
 
-const Title = (props: { text: string; isEditMode: boolean }) => {
-  const classes = classNames("text-3xl font-bold mb-4", {
-    "border-b-2 border-red-500": props.isEditMode,
-  })
-
-  return (
-    <h1 className={classes} contentEditable={props.isEditMode}>
-      {props.text}
-    </h1>
-  )
+  return <h1 className={"text-2xl font-bold"}>{props.text}</h1>
 }
 
 export default Title

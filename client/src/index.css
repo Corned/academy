@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 @font-face {
   font-family: "Inter";
@@ -14,14 +14,23 @@
   color: #212529;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
 }
 
-html, body, #root, .App {
+html,
+body,
+#root,
+.App {
   background-color: rgb(252, 252, 255);
 }
 
+textarea {
+  field-sizing: auto;
+  resize: none;
+}
 
 /*
 
