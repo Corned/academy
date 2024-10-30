@@ -1,3 +1,4 @@
+import { GripVerticalIcon } from "lucide-react"
 import { useEffect, useRef } from "react"
 import Markdown from "react-markdown"
 
@@ -28,21 +29,29 @@ const Paragraph: React.FC<ParagraphProps> = ({
       textareaRef.current.style.height = "auto"
       textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`
     }
-  }, [isEditMode, text])
+  }, [isEditMode, text, textareaRef.current?.offsetHeight])
 
   if (isEditMode) {
     return (
-      <textarea
-        ref={textareaRef}
-        className="resize-none overflow-hidden rounded border border-black/20"
-        value={text}
-        onChange={handleChange}
-      />
+      <div
+        style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: "2px" }}
+      >
+        <div className="grid cursor-grab place-items-center rounded bg-transparent transition-colors hover:bg-black/10">
+          <GripVerticalIcon />
+        </div>
+        <textarea
+          ref={textareaRef}
+          className="resize-none overflow-hidden rounded border border-black/20 p-1"
+          value={text}
+          onChange={handleChange}
+          spellCheck={false}
+        />
+      </div>
     )
   }
 
   return (
-    <div className="border-l border-black/20 pl-4">
+    <div className="markdown border-l border-black/20 p-1 pl-4">
       <Markdown>{text}</Markdown>
     </div>
   )
