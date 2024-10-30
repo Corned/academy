@@ -1,0 +1,8 @@
+{
+  "environmentType": {
+    "value": "nonprod"
+  },
+  "location": {
+    "value": "northeurope"
+  }
+}
