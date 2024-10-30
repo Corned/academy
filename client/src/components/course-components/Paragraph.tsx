@@ -34,7 +34,7 @@ const Paragraph: React.FC<ParagraphProps> = ({
   if (isEditMode) {
     return (
       <div
-        style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: "2px" }}
+        style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: "3px" }}
       >
         <div className="grid cursor-grab place-items-center rounded bg-transparent transition-colors hover:bg-black/10">
           <GripVerticalIcon />
