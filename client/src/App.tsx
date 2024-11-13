@@ -1,12 +1,16 @@
 import { Outlet } from "react-router-dom"
+import Navigation from "./components/Navigation"
 
 const App = () => {
   return (
     <>
       <meta name="theme-color" content="#fcfcff" />
-      <h1>App</h1>
-      <div className="mt-20 flex flex-row px-4">
-        <Outlet />
+      <div className="mx-auto grid grid-rows-[auto_1fr] gap-40">
+        <Navigation />
+
+        <div className="mx-auto flex h-full w-[660px] flex-row">
+          <Outlet />
+        </div>
       </div>
     </>
   )

@@ -32,18 +32,15 @@ let courseData: ICourse[] = [
 
 const CourseList = () => {
   return (
-    <div className="mx-auto flex w-[600px] flex-col gap-4">
-      <p className="mb-4 text-[48px] font-extrabold">Hey! 👋</p>
+    <div className="flex w-[600px] flex-col gap-5">
+      <h1 className="font text-[72px] font-extrabold">Hey Oliver! 👋</h1>
 
-      <div className="mb-5 flex flex-col gap-2">
+      <div className="flex flex-col gap-2">
         <p className="text-2xl font-bold">Welcome to Academy!</p>
-        <p>
-          This is the home page of Academy, the new learning platform for web
-          development.
-        </p>
+        <p>Here is a list of your courses.</p>
       </div>
 
-      <div className="mb-5 flex flex-col gap-2">
+      <div className="flex flex-col gap-2">
         <p className="text-2xl font-bold">Courses</p>
 
         <div className="course-list flex w-full flex-col gap-3">

@@ -62,12 +62,12 @@ const DemoPage = () => {
   ])
 
   return (
-    <div className="flex flex-col gap-4 p-10">
+    <div className="flex flex-col gap-4">
       <p className="mb-4 text-[48px] font-extrabold">
         Demo Page for Course Maker 🚀
       </p>
 
-      <div className="grid grid-cols-4 gap-10">
+      <div className="grid grid-cols-2 gap-10">
         <div className="flex flex-col gap-4">
           <CourseView
             editMode={false}

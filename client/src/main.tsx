@@ -9,14 +9,20 @@ import App from "./App"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import DemoPage from "@/pages/Demo"
 import CourseList from "./pages/CourseList"
+import Root from "./pages/root"
 
 const router = createBrowserRouter([
+  {
+    path: "/hello",
+    index: true,
+    element: <Root />,
+  },
   {
     path: "/",
     element: <App />,
     children: [
       {
-        path: "/courselist",
+        path: "/",
         element: <CourseList />,
       },
       {
