@@ -22,7 +22,7 @@ html,
 body,
 #root,
 .App {
-  background-color: rgb(255, 255, 255);
+  background-color: #f9f7f5;
 }
 
 textarea {

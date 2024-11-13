@@ -46,7 +46,7 @@ const Navigation = () => {
   // const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="sticky flex flex-row items-center border-0 border-[#edf1f2] bg-white py-7">
+    <div className="sticky flex flex-row items-center border-0 border-[#edf1f2] bg-transparent py-5">
       {/* <NavigationItem icon={isOpen ? <MenuIcon /> : <XIcon />} alignLeft /> */}
 
       <p
