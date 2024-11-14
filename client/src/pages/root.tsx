@@ -1,3 +1,4 @@
+import Button from "@/components/Button"
 import {
   RiGoogleFill,
   RiGithubFill,
@@ -22,17 +23,16 @@ const Root = () => {
         <p>Do you already have an account on Academy? 🥳</p>
 
         <div className="grid grid-cols-2 gap-2">
-          <button className="flex w-full flex-row justify-center gap-2 rounded-3xl border-2 border-[#edf1f2] bg-white p-3 transition-colors hover:cursor-pointer hover:bg-neutral-100">
+          <Button>
             <RiMailFill />
-
             <span>
               Yes, let me <b>sign in</b>!
             </span>
-          </button>
-          <button className="flex w-full flex-row justify-center gap-2 rounded-3xl border-2 border-[#edf1f2] bg-white p-3 transition-colors hover:cursor-pointer hover:bg-neutral-100">
+          </Button>
+          <Button>
             <RiMailFill />
             <span>No, but I want to make one!</span>
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -40,18 +40,18 @@ const Root = () => {
         <p>You can also sign in with an account from another service. 🤯</p>
 
         <div className="grid grid-cols-3 gap-2">
-          <button className="flex w-full flex-row justify-center gap-2 rounded-3xl border-2 border-[#edf1f2] bg-white p-3 transition-colors hover:cursor-pointer hover:bg-neutral-100">
+          <Button>
             <RiGoogleFill />
             <span>Google</span>
-          </button>
-          <button className="flex w-full flex-row justify-center gap-2 rounded-3xl border-2 border-[#edf1f2] bg-white p-3 transition-colors hover:cursor-pointer hover:bg-neutral-100">
+          </Button>
+          <Button>
             <RiMicrosoftFill />
             <span>Microsoft</span>
-          </button>
-          <button className="flex w-full flex-row justify-center gap-2 rounded-3xl border-2 border-[#edf1f2] bg-white p-3 transition-colors hover:cursor-pointer hover:bg-neutral-100">
+          </Button>
+          <Button>
             <RiGithubFill />
             <span>GitHub</span>
-          </button>
+          </Button>
         </div>
       </div>
     </div>
