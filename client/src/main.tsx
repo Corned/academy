@@ -8,7 +8,7 @@ import "@/markdown.scss"
 import App from "./App"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import DemoPage from "@/pages/Demo"
-import CourseList from "./pages/CourseList"
+import MyProfile from "./pages/MyProfile"
 import Root from "./pages/root"
 
 const router = createBrowserRouter([
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <CourseList />,
+        element: <MyProfile />,
       },
       {
         path: "/demo",

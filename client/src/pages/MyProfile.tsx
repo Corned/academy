@@ -2,6 +2,9 @@ import CourseListItem from "@/components/CourseListItem"
 import { BinaryIcon, BookTypeIcon, CodeIcon, GithubIcon } from "lucide-react"
 
 import { ICourse } from "@/interfaces"
+import Button from "@/components/Button"
+
+import { RiAddCircleFill, RiSearchLine } from "@remixicon/react"
 
 let courseData: ICourse[] = [
   {
@@ -40,6 +43,17 @@ const CourseList = () => {
         development. Here, you'll find comprehensive courses, tutorials, and
         projects designed to take your coding skills to the next level.
       </p>
+
+      <div className="grid h-40 grid-cols-2 gap-2">
+        <Button>
+          <RiAddCircleFill />
+          <span>Create a new course</span>
+        </Button>
+        <Button>
+          <RiSearchLine />
+          <span>Search for courses</span>
+        </Button>
+      </div>
 
       <div className="flex flex-col gap-2">
         <p className="text-2xl font-bold">Courses</p>
