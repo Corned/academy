@@ -8,7 +8,7 @@ const App = () => {
       <div className="mx-auto grid grid-rows-[auto_1fr] gap-40">
         <Navigation />
 
-        <div className="mx-auto flex h-full w-[660px] flex-row">
+        <div className="mx-auto flex h-full w-[1200px] flex-row">
           <Outlet />
         </div>
       </div>

@@ -35,10 +35,10 @@ let courseData: ICourse[] = [
 
 const CourseList = () => {
   return (
-    <div className="flex w-[600px] flex-col gap-5">
+    <div className="flex flex-col gap-5 w-full">
       <h1 className="font text-[72px] font-extrabold">Hey Oliver! 👋</h1>
 
-      <p className="text-justify">
+      <p className="text-justify max-w-[600px]">
         This is the home page of Academy, the new learning platform for web
         development. Here, you'll find comprehensive courses, tutorials, and
         projects designed to take your coding skills to the next level.
@@ -56,9 +56,9 @@ const CourseList = () => {
       </div>
 
       <div className="flex flex-col gap-2">
-        <p className="text-2xl font-bold">Courses</p>
+        <h2 className="text-[48px] font-bold">Courses</h2>
 
-        <div className="course-list flex w-full flex-col gap-3">
+        <div className="grid grid-cols-2 gap-2">
           {courseData.map((course, index) => (
             <CourseListItem
               courseData={course}
