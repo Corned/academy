@@ -1,0 +1,8 @@
+.ActivePopupifyElement {
+  position: absolute;
+  left: 0% !important;
+  width: 100% !important;
+  z-index: 100;
+
+  transition: all 0.2s ease-in-out;
+}

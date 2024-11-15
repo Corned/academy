@@ -1,25 +1,38 @@
 import { ICourse } from "@/interfaces"
-import { ChevronRight } from "lucide-react"
 
-const CourseListItem = ({ courseData }: { courseData: ICourse }) => {
+const CourseListItem = ({
+  courseData,
+  onClick,
+}: {
+  courseData: ICourse
+  onClick: any
+}) => {
   return (
     <div
       className="course flex select-none flex-row items-center gap-4 rounded-3xl border-2
         border-[#edf1f2] bg-white p-4 transition-colors hover:cursor-pointer
         hover:bg-neutral-100"
+      onClick={onClick}
     >
       <div
-        className="course__icon grid aspect-square h-full place-items-center rounded-full
-          bg-[#ff613f] text-3xl"
+        className="course__thumbnail grid aspect-square place-items-center rounded-xl bg-[#ff613f]
+          h-full border-red-500 text-3xl"
       >
         {courseData.icon}
       </div>
-      <div className="course__information">
-        <p className="text-xl font-semibold">{courseData.name}</p>
-        <p className="text-neutral-400">by {courseData.author}</p>
-      </div>
-      <div className="ml-auto flex items-center">
-        <ChevronRight className="h-4 w-4" />
+      <div className="course__information w-full flex flex-col h-full gap-2">
+        <p className="text-2xl font-semibold" style={{ fontFamily: "Rubik" }}>
+          {courseData.name}
+        </p>
+        <div className="flex flex-col gap-2">
+          <p className="text-neutral-400">{courseData.description}</p>
+        </div>
+        <div className="block w-full h-2 rounded-full bg-neutral-200 mt-auto overflow-hidden">
+          <div
+            className="block w-full h-full bg-neutral-400"
+            style={{ width: `${Math.random() * 100}%` }}
+          ></div>
+        </div>
       </div>
     </div>
   )

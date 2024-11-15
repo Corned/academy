@@ -2,9 +2,9 @@ import CourseListItem from "@/components/CourseListItem"
 import { BinaryIcon, BookTypeIcon, CodeIcon, GithubIcon } from "lucide-react"
 
 import { ICourse } from "@/interfaces"
-import Button from "@/components/Button"
-
-import { RiAddCircleFill, RiSearchLine } from "@remixicon/react"
+import { motion, AnimatePresence } from "motion/react"
+import { useState } from "react"
+import Popupify from "@/components/Popupify"
 
 let courseData: ICourse[] = [
   {
@@ -34,26 +34,21 @@ let courseData: ICourse[] = [
 ]
 
 const CourseList = () => {
+  const [clickedElement, setClickedElement] = useState(-1)
+
+  const handleClick = (index: number) => {
+    setClickedElement(index)
+  }
+
   return (
     <div className="flex flex-col gap-5 w-full">
       <h1 className="font text-[72px] font-extrabold">Hey Oliver! 👋</h1>
 
       <p className="text-justify max-w-[600px]">
-        This is the home page of Academy, the new learning platform for web
-        development. Here, you'll find comprehensive courses, tutorials, and
-        projects designed to take your coding skills to the next level.
+        Welcome to your profile! Here you can see all the courses you've
+        created, as well as the courses you're participating in. You can also
+        manage your profile settings and preferences.
       </p>
-
-      <div className="grid h-40 grid-cols-2 gap-2">
-        <Button>
-          <RiAddCircleFill />
-          <span>Create a new course</span>
-        </Button>
-        <Button>
-          <RiSearchLine />
-          <span>Search for courses</span>
-        </Button>
-      </div>
 
       <div className="flex flex-col gap-2">
         <h2 className="text-[48px] font-bold">Courses</h2>
@@ -62,6 +57,7 @@ const CourseList = () => {
           {courseData.map((course, index) => (
             <CourseListItem
               courseData={course}
+              onClick={() => handleClick(index)}
               key={`${course.name}-${index}`}
             />
           ))}
