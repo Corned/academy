@@ -18,8 +18,8 @@ const authenticate = (req: Request, res: Response, next: NextFunction) => {
   }
 
   try {
-    const token = authTokenParts[1]
-    const decoded: ITokenPayload = jwt.verify(token, process.env.SECRET_KEY as string) as ITokenPayload;
+    const token: string = authTokenParts[1]
+    const decoded = jwt.verify(token, process.env.SECRET_KEY as string) as ITokenPayload;
     res.locals.userId = decoded.id
     next()
   } catch (error) {
